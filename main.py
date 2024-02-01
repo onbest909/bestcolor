@@ -4,10 +4,10 @@ from datetime import timedelta,date
 import os
 import sys
 
-ENABLE      = False # PLEASE SET TO "True" TO TURN ON THE SCRIPT!
-START_DATE  = date(2023,1,1) # Date of your first commit, WARNING: IF this >= 20 years, it will take ~30s to calcuate pi.
-COMMIT_TIME = "12:00:00+00:00" # Time of your commits will make
-MESSAGE     = 'Hi👋,我是癫佬😋,这是我的看片神器😍.' # Commit message, you can change it to whatever you want.
+ENABLE      = True # PLEASE SET TO "True" TO TURN ON THE SCRIPT!
+START_DATE  = date(2024,2,1) # Date of your first commit, WARNING: IF this >= 20 years, it will take ~30s to calcuate pi.
+COMMIT_TIME = "12:00:00+07:00" # Time of your commits will make
+MESSAGE     = 'Hi👋.' # Commit message, you can change it to whatever you want.
 
 FAKE_COMMIT = False #Development mode, will not commit to git, and print the command to the console.
 
