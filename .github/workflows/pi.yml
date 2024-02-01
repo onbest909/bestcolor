@@ -2,9 +2,9 @@ name: Green PI Daily Commit
 run-name: Commit pi times today for ${{ github.actor }} .
 on:
 # push:
-#   branches:
-#     - main
-schedule:
+#    branches:
+#      - main
+   schedule:
     - cron: "0 0 * * *"
 jobs:
   Pi-Today:
