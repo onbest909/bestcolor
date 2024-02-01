@@ -1,0 +1,30 @@
+name: Green PI Backward Commit
+run-name: Commit pi times for the passed days for ${{ github.actor }} .
+on: workflow_dispatch
+jobs:
+  Pi-Today:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Set up git data
+        run: |
+          git config --local user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+          git config --local user.name "${{ github.actor }}"
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git pull --rebase
+
+      - name: Run main.py
+        run: python main.py --back
+
+      - name: Push to github
+        run: |
+          git push
